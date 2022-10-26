@@ -5,13 +5,13 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 //Middlewares
-app.use(express.json());
+app.use(express.json()); //bodyParser
 app.use(cors());
 app.use("/books",router) // localhost:5000/books
 
-// app.use('/', (req, res, next) => {
-//     res.send("This is our starting app");
-// });
+app.use('/', (req, res, next) => {
+    res.send("This is my starting app");
+});
 // console.log(process.env.MONGO_URI)
 const PORT = process.env.PORT;
 
